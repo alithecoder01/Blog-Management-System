@@ -7,27 +7,27 @@ use App\Models\User;
 
 class RegistrationController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('register');
     }
-    function UserRegister(Request $request){
-        // $request->validate(
-        //     [
-        //         'name'=>['required','string','max=255'],
-        //         'email'=>['required','string','max=22'],
-        //         'password'=>['required','string','10'],
-        //     ]
-        // );
+    function UserRegister(Request $request)
+    {
+        $request->validate(
+            [
+                'name' => ['required', 'string'],
+                'email' => ['required', 'string'],
+                'password' => ['required', 'string'],
+            ]
+        );
 
-        // User::create([
-        //     "name"=> $request->name,
-        //     "email"=> $request->email,
-        //     "password"=> $request->password,
-        //     "role"=> "User"
-        // ]);
-        // return redirect('/register')->with("success","User Registered");
-
-        return "hiii";
+        User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => $request->password,
+            "role" => "User"
+        ]);
+        return redirect('/register')->with("success", "User Registered");
     }
 
     // function AdminRegister(Request $request){
