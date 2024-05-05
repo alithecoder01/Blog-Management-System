@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class LoginController extends Controller
@@ -19,18 +20,24 @@ class LoginController extends Controller
             ]
         );
 
-        $user = User::where('email', $request->email)->first();
-
-        if(!$user){
-            return redirect('/login')->with("failed", "User not Found");
-        }
-
-        $hasher = app('hash');
-        if ($hasher->check($request->input("password"), $user->password)) {
+        $credentials = $request->only('email', 'password');
+        
+        if (Auth::attempt($credentials)){
+            $user = Auth::user();
             return redirect('/home');
+
+            if ($user->role === 'admin') {
+                // The logged in user is an admin
+                return redirect('/admin_dashboard');
+            } else {
+                // The logged in user is a regular user
+                return redirect('/home');
+            }
+
         }else{
-            return redirect('/login')->with("failed", "Wrong Password");
-        };
+            // The login not authorized 
+            return redirect('/login')->with("failed", "Wrong Email or Password");
+        }
         
     }
 }
