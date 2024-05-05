@@ -18,6 +18,7 @@
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Role</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -28,6 +29,7 @@
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{$user->email }}</td>
+                <td>{{$user->role }}</td>
                 <td>
                     <a href="" class="btn btn-primary">Edit</a>
                     <a href="" class="btn btn-danger">Del</a>

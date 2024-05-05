@@ -24,9 +24,8 @@ class LoginController extends Controller
         
         if (Auth::attempt($credentials)){
             $user = Auth::user();
-            return redirect('/home');
 
-            if ($user->role === 'admin') {
+            if ($user->role === 'Admin') {
                 // The logged in user is an admin
                 return redirect('/admin_dashboard');
             } else {

@@ -30,13 +30,5 @@ class RegistrationController extends Controller
         return redirect('/register')->with("success", "User Registered");
     }
 
-    // function AdminRegister(Request $request){
-    //     $new_user = User::create([
-    //         "name"=> $request->input("name"),
-    //         "email"=> $request->input("email"),
-    //         "password"=> $request->input("password"),
-    //         "role"=> "Admin"
-    //     ]);
-    //     return $new_user;
-    // }
+    
 }

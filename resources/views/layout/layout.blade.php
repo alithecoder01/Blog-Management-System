@@ -12,15 +12,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <!-- Name -->
-            <a class="navbar-brand" href="#">Blog Managment</a>
+            <a class="navbar-brand" href="{{url('/home')}}">Blog Managment</a>
             
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarItms">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{url('/home')}}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Features</a>
                     </li>
                     <li class="nav-item">
@@ -28,7 +28,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
