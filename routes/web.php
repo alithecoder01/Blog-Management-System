@@ -14,6 +14,7 @@ Route::get('/home', function () {
 });
 
 
+//Login and Registration Routes
 
 Route::get('/register', RegistrationController::class .'@index');
 Route::post('/register', RegistrationController::class .'@UserRegister');
@@ -21,7 +22,13 @@ Route::post('/register', RegistrationController::class .'@UserRegister');
 Route::get('/login', LoginController::class .'@index');
 Route::post('/login', LoginController::class .'@login');
 
-Route::get('/admin_dashboard',AdminController::class .'@index');
+// Admin Routes
 
-Route::get('/AdminRegister',AdminController::class .'@create');
+Route::get('/admin_dashboard',AdminController::class .'@index');
+Route::post('/admin_dashboard/{id}', AdminController::class .'@delete');
+
+
+Route::get('/AdminRegister',AdminController::class .'@createPage');
 Route::post('/AdminRegister',AdminController::class .'@store');
+Route::get('/AdminEdit/{id}', AdminController::class .'@editPage');
+Route::post('/AdminEdit/{id}', AdminController::class .'@edit');
