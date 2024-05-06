@@ -34,7 +34,7 @@ class AdminController extends Controller
         return redirect('/AdminRegister')->with("success", "Registered");
     }
 
-    // function delete(Request $request){
+    function delete(Request $request){
 
-    // }
+    }
 }
