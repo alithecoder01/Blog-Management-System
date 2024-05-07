@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('body');
+            $table->string('excerpt');
             $table->string('category');
             $table->string('tag');
+            $table->foreignId('user_id')->after('id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
