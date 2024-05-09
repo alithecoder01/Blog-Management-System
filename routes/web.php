@@ -12,9 +12,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-
-
-
 //Login and Registration Routes
 
 Route::get('/register', RegistrationController::class .'@index');
