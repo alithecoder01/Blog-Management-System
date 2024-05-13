@@ -30,7 +30,8 @@ class LoginController extends Controller
                 return redirect('/admin_dashboard');
             } else {
                 // The logged in user is a regular user
-                return redirect('/home');
+                
+                return redirect('/home/'. $user->id);
             }
 
         }else{

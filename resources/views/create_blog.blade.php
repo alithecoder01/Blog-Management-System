@@ -45,7 +45,7 @@
                         <!--Need to display them from the DB-->
                         @foreach ($category as $category)
                             <label for="category{{ $category->id }}">{{ $category->name }}</label>
-                            <input type="checkbox" name="category[]" value="{{ $category->name }}">
+                            <input type="checkbox" name="category[]" value="{{ $category->id }}">
                         @endforeach
                         @error('category')
                             <span class="text-danger">{{ $message }}</span>
@@ -58,7 +58,7 @@
                         <!--Need to display them from the DB-->
                         @foreach ($tag as $tag)
                             <label for="tag{{ $tag->id }}">{{ $tag->name }}</label>
-                            <input type="checkbox" name="tag[]" value="{{ $tag->name }}">
+                            <input type="checkbox" name="tag[]" value="{{ $tag->id }}">
                         @endforeach
                         @error('tag')
                             <span class="text-danger">{{ $message }}</span>
