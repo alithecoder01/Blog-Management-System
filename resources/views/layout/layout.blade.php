@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarItms">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/home//'.$user->id)}}">Home</a>
+                        <a class="nav-link" href="{{url('/home')}}">Home</a>
                     </li>
                 </ul>
             </div>
