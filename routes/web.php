@@ -39,5 +39,4 @@ Route::get('/create', BlogController::class .'@index');
 Route::post('/create', BlogController::class .'@store');
 
 //Post
-
-Route::get('', PostController::class .'@index');
+Route::get('/post', PostController::class .'@index');
