@@ -16,15 +16,18 @@
             </div>
         </div>
 
+        @if (session('success'))
+            <div class="alert alert-success"> {{ session('success') }}</div>
+        @endif
+
         <div class="container mt-5">
             <h2>Your Blogs</h2>
             <div class="list-group">
 
                 @forelse ($user->posts as $post)
-                    
-                    
-                    <a href="{{url('/post')}}" class="list-group-item list-group-item-action" aria-current="true">
-                        
+                    <a href="{{ url('/post/' . $post->id) }}" class="list-group-item list-group-item-action"
+                        aria-current="true">
+
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">Title : {{ $post->title }}</h5>
                         </div>

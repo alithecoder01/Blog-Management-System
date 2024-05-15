@@ -25,18 +25,28 @@ Route::get('/login', LoginController::class .'@index');
 Route::post('/login', LoginController::class .'@login');
 
 // Admin Routes
-
 Route::get('/admin_dashboard',AdminController::class .'@index');
 Route::post('/admin_dashboard/{id}', AdminController::class .'@delete');
-
+Route::post('/admin_dashboard/{id}', AdminController::class .'@deleteCategory');
+Route::get('/add_category', AdminController::class .'@AddCategoryPage');
+Route::post('/add_category',AdminController::class .'@StoreCategory');
+Route::get('/edit_category/{id}', AdminController::class .'@EditCategoryPage');
+Route::post('/edit_category/{id}',AdminController::class .'@UpdateCategory');
 Route::get('/AdminRegister',AdminController::class .'@createPage');
 Route::post('/AdminRegister',AdminController::class .'@store');
 Route::get('/AdminEdit/{id}', AdminController::class .'@editPage');
 Route::post('/AdminEdit/{id}', AdminController::class .'@edit');
+
 
 // Blog 
 Route::get('/create', BlogController::class .'@index');
 Route::post('/create', BlogController::class .'@store');
 
 //Post
-Route::get('/post', PostController::class .'@index');
+Route::get('/post/{id}', PostController::class .'@index');
+
+// Delete Post
+Route::post('/home/{id}', PostController::class .'@delete');
+// Edit Post
+Route::get('/editPost/{id}', PostController::class .'@editPost');
+Route::post('/editPost/{id}', PostController::class .'@updatePost');

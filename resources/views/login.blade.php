@@ -21,7 +21,7 @@
 
         <div class="card-body">
 
-            <form action="" method="POST">
+            <form action="{{'/login'}}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
